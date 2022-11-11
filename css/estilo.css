@@ -1,0 +1,169 @@
+body{
+    font-family: 'Outfit', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
+
+    background-image: url(../imagens/fundo-site.png);
+    background-repeat: no-repeat;
+    /*Não repetir a imagem quando ela acabar*/
+    background-size: cover;
+    /*Cobrir todo o body*/
+
+    min-height: 100vh;
+    /*ocupe 100% da altura*/
+}
+.cabecalho{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    /*espaço de 15 pixel entre os elementos*/
+    padding-top: 50px;
+}
+
+.cabecalho .titulo{
+    color: #f1ecff;
+}
+
+.cabecalho .pokebola{
+    width: 27px;
+    height: 27px;
+}
+
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+    margin: 60px 0;
+}
+
+.listas-pokemon{
+    width: 310px;
+    height: 520px;
+    position: relative;
+    /*junto com o cartao (position:absolute*/
+}
+
+.btn-seta{
+    background-color: white;
+    width: 70px;
+    height: 70px;
+    border-radius: 50px;
+    /*radio até a borda (raio iguais)*/
+    border: 0;
+    cursor: pointer;
+    transition: background-color 0.25s ease-in-out;
+    /*onde vai transacionar, o tempo e o tipo de transição*/
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.btn-seta.btn-voltar{
+    transform: rotateY(180deg);
+    /*transform para modificar o elemento*/
+    /*rotateY para rotação no eixo Y*/
+    /*deg = graus*/
+   
+}
+
+.btn-seta:hover{
+    background-color: #8351FE;
+}
+
+.cartao{
+    background-color: aqua;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /*Direção do flex*/
+    justify-content: space-between;
+    /*alinhamento vertical: coloque um espaço entre os elementos*/
+    position: absolute;
+    /*junto com a listaPokemon (position:relative*/
+    padding: 12px;
+    border-radius: 10px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    opacity: 0;
+
+    transition: opacity 0.3 ease-in-out;
+    /*transição de trocar as cartas*/
+}
+
+.cartao.selecionado{
+    /*quando for o cartao e selecionado*/
+
+    opacity: 1;
+    z-index: 1;
+    /*sobreposição de elementos (eixo z)*/
+}
+
+.fundo-1{
+    background: url(../imagens/fundo-card-1.jpg) no-repeat;
+}
+
+.fundo-2{
+    background: url(../imagens/fundo-card-2.jpg) no-repeat;
+}
+
+.fundo-3{
+    background: url(../imagens/fundo-card-3.jpg) no-repeat;
+}
+
+.cartao .informacoes{
+    background-color: rgba(179, 177, 185, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 10px;
+    /*em cima e em baixo*/
+    /*dos lados*/
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.cartao .informacoes .nome{
+    color: #f1ecff;
+    font-size: 22px;
+
+}
+
+.cartao .informacoes .hp{
+    background-color: #333;
+    color: #f1ecff;
+    padding: 6px 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    /*border-radius: 20px*/
+}
+
+.cartao .container-imagem{
+    text-align: center;
+}
+
+.cartao .imagem-pokemon {
+    max-width: 100%;
+    max-height: 280px;
+    padding: 20px;
+}
+
+.cartao .descricao{
+    background-color: rgba(255, 255, 255, 0.8);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.cartao .descricao .titulo{
+    background-color: #333;
+    color: #f1ecff;
+    font-size: 15px;
+    padding: 12px;
+}
+
+.cartao .descricao .conteudo{
+    font-size: 14px;
+    padding: 14px;
+    text-align: justify;
+    max-height: 115px;
+    overflow-y: auto;
+    /*criar a barra denavegação veertical para descer e subir o texto*/
+    /*não quero transbordar (overflow)*/
+}
